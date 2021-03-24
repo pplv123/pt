@@ -1,6 +1,7 @@
 package com.pj567.movie.cache;
 
 import com.pj567.movie.data.AppDataManager;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;

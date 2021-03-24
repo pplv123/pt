@@ -8,7 +8,7 @@ import com.pj567.movie.R;
 import com.pj567.movie.base.BaseLazyFragment;
 import com.pj567.movie.event.ServerEvent;
 import com.pj567.movie.event.TopStateEvent;
-import com.pj567.movie.ui.activity.HistoryActivity;
+import com.pj567.movie.ui.activity.HistoryNewActivity;
 import com.pj567.movie.ui.activity.LivePlayActivity;
 import com.pj567.movie.ui.activity.RewardActivity;
 import com.pj567.movie.ui.activity.SearchActivity;
@@ -88,7 +88,7 @@ public class UserFragment extends BaseLazyFragment implements View.OnClickListen
         } else if (v.getId() == R.id.tvSetting) {
             jumpActivity(SettingActivity.class);
         } else if (v.getId() == R.id.tvHistory) {
-            jumpActivity(HistoryActivity.class);
+            jumpActivity(HistoryNewActivity.class);
         } else if (v.getId() == R.id.tvReward) {
             jumpActivity(RewardActivity.class);
         } else if (v.getId() == R.id.tvProjection) {

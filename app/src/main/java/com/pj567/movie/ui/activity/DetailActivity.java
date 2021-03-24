@@ -8,13 +8,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.orhanobut.hawk.Hawk;
 import com.pj567.movie.R;
 import com.pj567.movie.base.BaseActivity;
 import com.pj567.movie.bean.AbsXml;
@@ -25,7 +23,6 @@ import com.pj567.movie.event.RefreshEvent;
 import com.pj567.movie.picasso.RoundTransformation;
 import com.pj567.movie.ui.adapter.SeriesAdapter;
 import com.pj567.movie.util.FastClickCheckUtil;
-import com.pj567.movie.util.HawkConfig;
 import com.pj567.movie.viewmodel.SourceViewModel;
 import com.squareup.picasso.Picasso;
 import com.tv.leanback.GridLayoutManager;
@@ -102,7 +99,7 @@ public class DetailActivity extends BaseActivity {
                     seriesAdapter.getData().get(vodInfo.playIndex).selected = true;
                     seriesAdapter.notifyItemChanged(vodInfo.playIndex);
                     //保存历史
-                    RoomDataManger.insertVodRecord(sourceUrl, vodInfo);
+                    insertVod(sourceUrl, vodInfo);
                     if (vodInfo.isX5) {
                         bundle.putString("html", vodInfo.seriesList.get(vodInfo.playIndex).url);
                         jumpActivity(PraseActivity.class, bundle);
@@ -126,7 +123,7 @@ public class DetailActivity extends BaseActivity {
                         vodInfo.playIndex = position;
                     }
                     //保存历史
-                    RoomDataManger.insertVodRecord(sourceUrl, vodInfo);
+                    insertVod(sourceUrl, vodInfo);
                     Bundle bundle = new Bundle();
                     if (vodInfo.isX5) {
                         bundle.putString("html", vodInfo.seriesList.get(vodInfo.playIndex).url);
@@ -219,10 +216,15 @@ public class DetailActivity extends BaseActivity {
                     mGridView.scrollToPosition(index);
                     vodInfo.playIndex = index;
                     //保存历史
-                    RoomDataManger.insertVodRecord(sourceUrl, vodInfo);
+                    insertVod(sourceUrl, vodInfo);
                 }
             }
         }
+    }
+
+    private void insertVod(String sourceUrl, VodInfo vodInfo) {
+        RoomDataManger.insertVodRecord(sourceUrl, vodInfo);
+        EventBus.getDefault().post(new RefreshEvent(RefreshEvent.TYPE_HISTORY_REFRESH));
     }
 
     @Override

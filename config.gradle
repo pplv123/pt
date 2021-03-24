@@ -9,8 +9,8 @@ ext {
             applicationId    : "com.pj567.movie",
     ]
     versions = [
-            versionCode: 120,
-            versionName: "1.2.0",
+            versionCode: 123,
+            versionName: "1.2.3",
     ]
     dependencies = [
             "appcompat"                    : "androidx.appcompat:appcompat:1.2.0",

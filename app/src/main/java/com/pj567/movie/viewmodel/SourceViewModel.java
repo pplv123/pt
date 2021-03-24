@@ -4,14 +4,12 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.lzy.okgo.OkGo;
-import com.lzy.okgo.cache.CacheMode;
 import com.lzy.okgo.callback.AbsCallback;
 import com.lzy.okgo.model.Response;
 import com.pj567.movie.api.ApiConfig;
 import com.pj567.movie.bean.AbsSortXml;
 import com.pj567.movie.bean.AbsXml;
 import com.pj567.movie.bean.Movie;
-import com.pj567.movie.util.L;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 

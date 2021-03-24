@@ -58,4 +58,22 @@ public class RoomDataManger {
         }
         return vodInfoList;
     }
+
+    public static List<VodInfo> getAllVodRecord() {
+        List<VodRecord> recordList = AppDataManager.get().getVodRecordDao().getAll();
+        List<VodInfo> vodInfoList = new ArrayList<>();
+        if (recordList != null) {
+            for (VodRecord record : recordList) {
+                if (record.data != null) {
+                    Object obj = IOUtils.toObject(record.data);
+                    if (obj != null) {
+                        VodInfo info = (VodInfo) obj;
+                        info.apiUrl = record.apiUrl;
+                        vodInfoList.add((VodInfo) obj);
+                    }
+                }
+            }
+        }
+        return vodInfoList;
+    }
 }

@@ -5,14 +5,11 @@ import android.widget.TextView;
 
 import com.orhanobut.hawk.Hawk;
 import com.pj567.movie.R;
-import com.pj567.movie.api.ApiConfig;
 import com.pj567.movie.base.BaseLazyFragment;
-import com.pj567.movie.bean.PraseBean;
 import com.pj567.movie.ui.dialog.ChangePlayDialog;
 import com.pj567.movie.ui.dialog.LiveSourceDialog;
 import com.pj567.movie.ui.dialog.ModelDialog;
 import com.pj567.movie.ui.dialog.PasswordDialog;
-import com.pj567.movie.ui.dialog.PraseDialog;
 import com.pj567.movie.util.FastClickCheckUtil;
 import com.pj567.movie.util.HawkConfig;
 import com.tv.player.PlayerConfig;
@@ -23,7 +20,6 @@ import com.tv.player.exo.ExoMediaPlayerFactory;
 import com.tv.player.ijk.IjkPlayerFactory;
 
 import java.lang.reflect.Field;
-import java.util.List;
 
 /**
  * @author pj567

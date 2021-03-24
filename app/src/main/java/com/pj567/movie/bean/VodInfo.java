@@ -1,8 +1,6 @@
 package com.pj567.movie.bean;
 
 import com.pj567.movie.util.DefaultConfig;
-import com.pj567.movie.util.L;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -44,6 +42,7 @@ public class VodInfo implements Serializable {
     public String des;// <![CDATA[权来]
     public boolean isX5;
     public int playIndex = 0;
+    public String apiUrl;
 
     public void setVideo(Movie.Video video) {
         last = video.last;

@@ -18,4 +18,8 @@ public class HawkConfig {
     public static final String PLAY_TYPE = "play_type";//0 系统；1 ijk；2 exo
     public static final String LIVE_SOURCE = "live_source";//0 Ip多余域名；1 Ip少余域名
     public static final String SHOW_UPDATE_HINT = "show_update_hint";//当前版本是否显示更新提示
+    public static final String APP_ID = "1111362713";
+    public static final String KAI_PING_ID = "4061164639676843";
+    public static final String JI_LI_ID = "6081064669178994";
+    public static final String CHA_PING_ID = "7081968720897289";
 }

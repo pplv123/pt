@@ -22,6 +22,9 @@ public interface VodRecordDao {
     @Query("select * from vodRecord where `apiUrl`=:apiUrl order by updateTime desc")
     List<VodRecord> getAll(String apiUrl);
 
+    @Query("select * from vodRecord  order by updateTime desc")
+    List<VodRecord> getAll();
+
     @Query("select *from vodRecord where `apiUrl`=:apiUrl and `vodId`=:vodId")
     VodRecord getVodRecord(String apiUrl, int vodId);
 

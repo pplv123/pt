@@ -3,15 +3,12 @@ package com.pj567.movie.ui.adapter;
 import android.graphics.Color;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.pj567.movie.R;
 import com.pj567.movie.bean.PraseBean;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author pj567

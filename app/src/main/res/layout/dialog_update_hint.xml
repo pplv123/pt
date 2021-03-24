@@ -11,7 +11,7 @@
         android:layout_width="300pt"
         android:layout_height="wrap_content"
         android:background="@drawable/splash_focus"
-        android:text="当前版本更新内容：\n1、修复已知bug\n2、移除x5网页加载"
+        android:text="当前版本更新内容：\n1、修改搜索界面逻辑\n2、修复首页在数据加载失败不能切换源的问题\n3、优化历史记录"
         android:textColor="@android:color/black"
         android:textSize="18pt" />
 

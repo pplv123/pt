@@ -7,6 +7,7 @@ package com.pj567.movie.event;
  */
 public class RefreshEvent {
     public static final int TYPE_REFRESH = 0;
+    public static final int TYPE_HISTORY_REFRESH = 1;
     public int type;
     public Object obj;
 

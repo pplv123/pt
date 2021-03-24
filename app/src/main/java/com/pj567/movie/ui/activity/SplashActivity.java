@@ -51,7 +51,8 @@ public class SplashActivity extends BaseActivity {
         findViewById(R.id.tvJump).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jump();
+                jumpActivity(HomeActivity.class);
+                finish();
             }
         });
     }
@@ -73,11 +74,6 @@ public class SplashActivity extends BaseActivity {
         }
         Hawk.put(HawkConfig.PASSWORD, pwd);
         Toast.makeText(this, "密码设置成功", Toast.LENGTH_SHORT).show();
-        jumpActivity(HomeActivity.class);
-        finish();
-    }
-
-    public void jump() {
         jumpActivity(HomeActivity.class);
         finish();
     }

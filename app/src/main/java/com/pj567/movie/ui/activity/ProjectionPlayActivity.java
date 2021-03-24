@@ -116,6 +116,7 @@ public class ProjectionPlayActivity extends BaseActivity {
         if (intent != null && intent.getExtras() != null) {
             Bundle bundle = intent.getExtras();
             playUrl = bundle.getString("playUrl");
+            mVodSeekLayout.setVodName("播放地址:" + playUrl);
             mVideoView.setUrl(playUrl);
             mVideoView.start();
         }

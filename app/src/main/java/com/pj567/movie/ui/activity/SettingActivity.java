@@ -12,10 +12,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.orhanobut.hawk.Hawk;
-import com.pj567.movie.ui.fragment.PraseFragment;
-import com.tv.leanback.OnChildViewHolderSelectedListener;
-import com.tv.leanback.OnItemListener;
-import com.tv.leanback.VerticalGridView;
 import com.pj567.movie.R;
 import com.pj567.movie.api.ApiConfig;
 import com.pj567.movie.base.BaseActivity;
@@ -23,9 +19,13 @@ import com.pj567.movie.base.BaseLazyFragment;
 import com.pj567.movie.ui.adapter.SettingPageAdapter;
 import com.pj567.movie.ui.adapter.SettingSortAdapter;
 import com.pj567.movie.ui.fragment.ModelSettingFragment;
+import com.pj567.movie.ui.fragment.PraseFragment;
 import com.pj567.movie.ui.fragment.SourceSettingFragment;
 import com.pj567.movie.util.AppManager;
 import com.pj567.movie.util.HawkConfig;
+import com.tv.leanback.OnChildViewHolderSelectedListener;
+import com.tv.leanback.OnItemListener;
+import com.tv.leanback.VerticalGridView;
 
 import java.util.ArrayList;
 import java.util.List;

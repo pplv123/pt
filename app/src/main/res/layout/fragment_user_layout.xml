@@ -91,7 +91,7 @@
         android:focusableInTouchMode="true"
         android:gravity="center"
         android:lineSpacingMultiplier="1.2"
-        android:text="学习交流和意见反馈\n请加QQ群120421337"
+        android:text="学习交流和意见反馈\n请加QQ群544929943"
         android:textColor="@color/color_CCFFFFFF"
         android:textSize="36pt" />
 </FrameLayout>

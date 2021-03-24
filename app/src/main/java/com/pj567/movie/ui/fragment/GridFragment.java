@@ -10,13 +10,8 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.pj567.movie.api.ApiConfig;
-import com.tv.leanback.GridLayoutManager;
-import com.tv.leanback.OnChildViewHolderSelectedListener;
-import com.tv.leanback.OnItemListener;
-import com.tv.leanback.VerticalGridView;
-import com.tv.widget.LoadMoreView;
 import com.pj567.movie.R;
+import com.pj567.movie.api.ApiConfig;
 import com.pj567.movie.base.BaseLazyFragment;
 import com.pj567.movie.bean.AbsXml;
 import com.pj567.movie.bean.Movie;
@@ -25,6 +20,11 @@ import com.pj567.movie.ui.activity.DetailActivity;
 import com.pj567.movie.ui.adapter.GridAdapter;
 import com.pj567.movie.util.FastClickCheckUtil;
 import com.pj567.movie.viewmodel.SourceViewModel;
+import com.tv.leanback.GridLayoutManager;
+import com.tv.leanback.OnChildViewHolderSelectedListener;
+import com.tv.leanback.OnItemListener;
+import com.tv.leanback.VerticalGridView;
+import com.tv.widget.LoadMoreView;
 
 import org.greenrobot.eventbus.EventBus;
 

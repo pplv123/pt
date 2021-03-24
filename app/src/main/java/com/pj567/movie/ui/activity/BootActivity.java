@@ -1,7 +1,5 @@
 package com.pj567.movie.ui.activity;
 
-import android.widget.Toast;
-
 import com.pj567.movie.R;
 import com.pj567.movie.base.BaseActivity;
 import com.pj567.movie.event.X5Event;

@@ -221,12 +221,12 @@ public class HomeActivity extends BaseActivity {
                 if (absXml != null && absXml.movieSort != null && absXml.movieSort.sortList != null) {
                     sortAdapter.setNewData(DefaultConfig.adjustSort(absXml.movieSort.sortList));
                     setSortDefaultPress(mGridView);
-                    initViewPager();
                 } else {
                     sortAdapter.setNewData(DefaultConfig.adjustSort(new ArrayList<>()));
                     tvName.setFocusable(false);
                     tvName.setFocusableInTouchMode(false);
                 }
+                initViewPager();
             }
         });
     }
@@ -240,7 +240,7 @@ public class HomeActivity extends BaseActivity {
         } else {
             L.e("无");
         }
-        if (DefaultConfig.getAppVersionCode(mContext) > Hawk.get(HawkConfig.SHOW_UPDATE_HINT, 118)) {
+        if (DefaultConfig.getAppVersionCode(mContext) > Hawk.get(HawkConfig.SHOW_UPDATE_HINT, 121)) {
             new UpdateHintDialog().build(mContext).show();
             Hawk.put(HawkConfig.SHOW_UPDATE_HINT, DefaultConfig.getAppVersionCode(mContext));
         }

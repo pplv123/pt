@@ -3,13 +3,13 @@ package com.pj567.movie.ui.fragment;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.tv.leanback.VerticalGridView;
 import com.pj567.movie.R;
 import com.pj567.movie.api.ApiConfig;
 import com.pj567.movie.base.BaseLazyFragment;
 import com.pj567.movie.bean.SourceBean;
 import com.pj567.movie.ui.adapter.SourceSettingAdapter;
 import com.pj567.movie.util.FastClickCheckUtil;
+import com.tv.leanback.VerticalGridView;
 
 import java.util.ArrayList;
 import java.util.List;

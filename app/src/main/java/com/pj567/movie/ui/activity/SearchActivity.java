@@ -25,6 +25,7 @@ import com.pj567.movie.server.RemoteServer;
 import com.pj567.movie.ui.adapter.SearchAdapter;
 import com.pj567.movie.util.DefaultConfig;
 import com.pj567.movie.util.FastClickCheckUtil;
+import com.pj567.movie.util.L;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.tv.QRCodeGen;
@@ -53,6 +54,7 @@ public class SearchActivity extends BaseActivity {
     private ImageView ivQRCode;
     private SearchAdapter searchAdapter;
     private int sourceIndex = 0;
+    private String searchTitle = "";
     private int sourceTotal = 0;
 
     @Override
@@ -150,16 +152,18 @@ public class SearchActivity extends BaseActivity {
         sourceIndex = 0;
         cancel();
         showLoading();
+        this.searchTitle = title;
         mGridView.setVisibility(View.INVISIBLE);
         searchAdapter.setNewData(new ArrayList<>());
-        for (SearchRequest request : ApiConfig.get().getSearchRequestList()) {
-            searchResult(request.api, title, request.name);
-        }
+        searchResult();
     }
 
-    private void searchResult(String api, String wd, String sourceName) {
-        OkGo.<String>get(api)
-                .params("wd", wd)
+    private void searchResult() {
+        List<SearchRequest> searchRequestList = ApiConfig.get().getSearchRequestList();
+        String api = searchRequestList.get(sourceIndex).api;
+        String sourceName = searchRequestList.get(sourceIndex).name;
+        OkGo.<String>get(searchRequestList.get(sourceIndex).api)
+                .params("wd", searchTitle)
                 .tag("search")
                 .execute(new AbsCallback<String>() {
                     @Override
@@ -244,11 +248,14 @@ public class SearchActivity extends BaseActivity {
                 searchAdapter.setNewData(data);
             }
         }
+        L.e("sourceIndex = " + sourceIndex);
         if (++sourceIndex == sourceTotal) {
             if (searchAdapter.getData().size() <= 0) {
                 showEmpty();
             }
             cancel();
+        }else {
+            searchResult();
         }
     }
 

@@ -13,6 +13,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -27,7 +28,6 @@ import com.pj567.movie.util.AdBlocker;
 import com.pj567.movie.util.FastClickCheckUtil;
 import com.pj567.movie.util.HawkConfig;
 import com.pj567.movie.util.L;
-import com.tv.leanback.HorizontalGridView;
 import com.tv.leanback.VerticalGridView;
 
 import java.util.HashMap;
@@ -84,22 +84,26 @@ public class PraseActivity extends BaseActivity {
             @Override
             public void onLoadResource(WebView webView, String s) {
                 super.onLoadResource(webView, s);
-                L.e("数据 = " + s);
-                if (s.contains(".m3u8?") || s.endsWith(".m3u8") || s.contains(".mp4?") || s.endsWith(".mp4")) {
-                    String url = s;
-                    if (s.contains("?url=")) {
-                        String[] split = s.split("\\?url=");
-                        for (String str : split) {
-                            if (str.contains(".m3u8?") || str.endsWith(".m3u8") || str.contains(".mp4?") || str.endsWith(".mp4")) {
-                                url = str;
+                try {
+                    L.e("数据 = " + s);
+                    if (s.contains(".m3u8?") || s.endsWith(".m3u8") || s.contains(".mp4?") || s.endsWith(".mp4")) {
+                        String url = s;
+                        if (s.contains("?url=")) {
+                            String[] split = s.split("\\?url=");
+                            for (String str : split) {
+                                if (str.contains(".m3u8?") || str.endsWith(".m3u8") || str.contains(".mp4?") || str.endsWith(".mp4")) {
+                                    url = str;
+                                }
                             }
                         }
+                        L.e("解析地址 = " + url);
+                        Bundle bundle = new Bundle();
+                        bundle.putString("playUrl", url);
+                        jumpActivity(ProjectionPlayActivity.class, bundle);
+                        finish();
                     }
-                    L.e("解析地址 = " + url);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("playUrl", url);
-                    jumpActivity(ProjectionPlayActivity.class, bundle);
-                    finish();
+                } catch (Exception e) {
+                    Toast.makeText(mContext, "解析错误", Toast.LENGTH_SHORT).show();
                 }
             }
         });
